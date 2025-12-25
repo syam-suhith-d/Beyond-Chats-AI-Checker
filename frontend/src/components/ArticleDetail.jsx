@@ -10,6 +10,17 @@ const ArticleDetail = () => {
     useEffect(() => {
         axios.get(`https://beyond-chats-assignment-7fof.onrender.com/api/articles/${id}`)
             .then(res => {
+                // Parse citations if they are a string
+                let citations = res.data.source_citations;
+                if (typeof citations === 'string') {
+                    try {
+                        citations = JSON.parse(citations);
+                    } catch (e) {
+                        citations = [];
+                    }
+                }
+                res.data.source_citations = citations || [];
+
                 setArticle(res.data);
                 setLoading(false);
             })
