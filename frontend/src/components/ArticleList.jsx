@@ -7,9 +7,17 @@ const ArticleList = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/articles')
+        axios.get('https://nongospel-potentially-ares.ngrok-free.dev/api/articles', {
+            headers: {
+                "ngrok-skip-browser-warning": "69420"
+            }
+        })
             .then(res => {
-                setArticles(res.data);
+                if (Array.isArray(res.data)) {
+                    setArticles(res.data);
+                } else {
+                    console.error("API response is not an array:", res.data);
+                }
                 setLoading(false);
             })
             .catch(err => {

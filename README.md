@@ -83,8 +83,9 @@ npm run dev
 *Frontend runs on: `http://localhost:5173`*
 
 ## 🌐 Live Link
-**[Live Frontend Demo (Placeholder)](http://localhost:5173)**  
-*Note: Since this project is running locally in this environment, please use the localhost link above after starting the servers. To share publicly, deploy the `frontend` to Vercel/Netlify and `backend_core` to a PHP host (Heroku/DigitalOcean).*
+**[Live Frontend Demo](https://deluxe-sunburst-03f586.netlify.app/)**  
+
+> **Note:** The backend is running locally and tunneled via Ngrok. If the data doesn't load, it means my local tunnel is offline. Please refer to `DEPLOYMENT.md` for instructions on how to run it yourself.
 
 ## 📁 Repository Structure
 - **/backend_core**: Laravel 11 API + SQLite Database.

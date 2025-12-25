@@ -8,7 +8,11 @@ const ArticleDetail = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/articles/${id}`)
+        axios.get(`https://nongospel-potentially-ares.ngrok-free.dev/api/articles/${id}`, {
+            headers: {
+                "ngrok-skip-browser-warning": "69420"
+            }
+        })
             .then(res => {
                 setArticle(res.data);
                 setLoading(false);
